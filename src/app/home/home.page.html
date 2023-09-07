@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="home-section ion-padding" >
+    <div class="heading ion-padding" >
+      <h1> Login </h1>
+    </div>
+    <ion-list>
+      <ion-item>
+        <ion-input 
+        label="Usuario" 
+        labelPlacement="floating" 
+        [clearInput]="true" 
+        placeholder="Introduce tu usuario">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input 
+        label="Contraseña" 
+        labelPlacement="floating" 
+        type="password" 
+        placeholder="Introduce tu Contraseña">
+        </ion-input>
+      </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    </ion-list>
+    
+    <div class="boton">
+      <ion-button size="small" routerLink="/qr">Ingresar</ion-button>
+    </div>
+    <div class="action-button ion-padding">
+      <ion-button size="small" class="registrar" slot="end" routerLink="/registrar">Registrar</ion-button>
+      <ion-button size="small" class="olvidar" routerLink="/recuperar">Recuperar Contraseña</ion-button>
+    </div>
   </div>
+  
+
 </ion-content>
