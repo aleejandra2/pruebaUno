@@ -1,5 +1,5 @@
 ion-content{
-  background: url('../../assets/images/uuu.jpeg'); 
+  --background: url('../../assets/images/Background.jpeg') no-repeat center/cover fixed;
 }
 
 .home-section {
@@ -18,7 +18,7 @@ ion-content{
       }
   }
   ion-button{
-    --background: #f6c8c7;
+    --background: #db5452;
     color: #141414;
     font-weight: bold;
 }
@@ -27,12 +27,10 @@ ion-content{
 .action-button{
   text-align: center;
   .registrar-button{
-      --background: #f6c8c7;
       color: #141414;
       font-weight: bold;
   }
   .olvidar-button{
-      --background: #f6c8c7;
       color: #141414;
       font-weight: bold;
   }
