@@ -17,7 +17,9 @@
         labelPlacement="floating" 
         [clearInput]="true" 
         placeholder="Introduce tu nombre"
-        formControlName="nombre">
+        formControlName="nombre"
+        errorText="Debe ingresar su nombre"
+        required>
         </ion-input>
       </ion-item>
       <ion-item>
@@ -26,7 +28,9 @@
         labelPlacement="floating" 
         [clearInput]="true" 
         placeholder="Introduce tu apellido"
-        formControlName="apellido">
+        formControlName="apellido"
+        errorText="Debe ingresar su apellido"
+        required>
         </ion-input>
       </ion-item>
       <ion-item>
@@ -35,7 +39,9 @@
         labelPlacement="floating" 
         [clearInput]="true" 
         placeholder="Introduce tu rut (ej: 12.123.123-0)"
-        formControlName="rut">
+        formControlName="rut"
+        errorText="Debe ingresar su rut"
+        required>
         </ion-input>
       </ion-item>
       <ion-item>
@@ -44,7 +50,9 @@
         labelPlacement="floating" 
         [clearInput]="true" 
         placeholder="Introduce tu carrera"
-        formControlName="carrera">
+        formControlName="carrera"
+        errorText="Debe ingresar una carrera"
+        required>
         </ion-input>
       </ion-item>
       <ion-item>
@@ -54,16 +62,26 @@
         [clearInput]="true" 
         placeholder="Introduce tu correo"
         formControlName="correo"
-        type="email">
+        type="email"
+        errorText="Debe ingresar su correo"
+        required>
         </ion-input>
       </ion-item>
+      <div *ngIf="formRegistro.get('correo')?.hasError('required')" class="error-message">
+        El correo es obligatorio.
+      </div>
+      <div *ngIf="formRegistro.get('correo')?.hasError('email')" class="error-message">
+        El correo no es válido.
+      </div>
       <ion-item>
         <ion-input 
         label="Contraseña:" 
         labelPlacement="floating" 
         type="password" 
         placeholder="Introduce tu Contraseña"
-        formControlName="contraseña">
+        formControlName="contraseña"
+        errorText="Debe ingresar una contraseña"
+        required>
         </ion-input>
       </ion-item>
     </form>

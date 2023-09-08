@@ -28,7 +28,7 @@ export class RegistrarPage implements OnInit {
       'apellido': new FormControl("",Validators.required),
       'rut': new FormControl("",Validators.required),
       'carrera': new FormControl("",Validators.required),
-      'correo': new FormControl("",Validators.required),
+      'correo': new FormControl("",[Validators.required, Validators.email]),
       'contraseña': new FormControl("",Validators.required)
     });
    }

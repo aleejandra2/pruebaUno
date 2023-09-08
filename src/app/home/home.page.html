@@ -8,20 +8,24 @@
       <ion-item>
         <ion-input 
         type="email"
-        label="Usuario" 
+        label="Correo:" 
         labelPlacement="floating" 
         [clearInput]="true" 
-        placeholder="Introduce tu usuario"
-        formControlName="correo">
+        placeholder="Ingrese su correo"
+        formControlName="correo"
+        errorText="Debe ingresar su correo"
+        required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-input 
-        label="Contraseña" 
+        label="Contraseña:" 
         labelPlacement="floating" 
         type="password" 
-        placeholder="Introduce tu Contraseña"
-        formControlName="contraseña">
+        placeholder="Ingrese su contraseña"
+        formControlName="contraseña"
+        errorText="Debe ingresar su contraseña"
+        required>
         </ion-input>
       </ion-item>
   

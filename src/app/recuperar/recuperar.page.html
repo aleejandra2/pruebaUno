@@ -11,4 +11,46 @@
       <ion-title size="large">Recuperar</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <form [formGroup]="formRecuperar">
+    <ion-item>
+      <ion-input 
+      type="email"
+      label="Correo:" 
+      labelPlacement="floating" 
+      [clearInput]="true" 
+      placeholder="Ingrese su correo"
+      formControlName="correo"
+      errorText="Debe ingresar su correo"
+      required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input 
+      label="Nueva Contraseña:" 
+      labelPlacement="floating" 
+      type="password" 
+      placeholder="Introduce tu Contraseña"
+      formControlName="nuevaContrasenia"
+      errorText="Debe ingresar una nueva contraseña"
+      required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input 
+      label="Confirmar Nueva Contraseña:" 
+      labelPlacement="floating" 
+      type="password" 
+      placeholder="Introduce tu Contraseña"
+      formControlName="confirmarNuevaContrasenia"
+      errorText="Debe volver a ingresar la nueva contraseña"
+      required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button size="small" (click)="cambiarContrasenia()">Ingresar</ion-button>
+
+  
+
+  </form>
 </ion-content>

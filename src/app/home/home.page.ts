@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
-import { Usuario } from '../registrar/registrar.page';;
+import { Usuario } from '../registrar/registrar.page';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
