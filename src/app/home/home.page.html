@@ -4,13 +4,15 @@
     <div class="heading ion-padding" >
       <h1> Login </h1>
     </div>
-    <ion-list>
+    <form [formGroup]="formLogin">
       <ion-item>
         <ion-input 
+        type="email"
         label="Usuario" 
         labelPlacement="floating" 
         [clearInput]="true" 
-        placeholder="Introduce tu usuario">
+        placeholder="Introduce tu usuario"
+        formControlName="correo">
         </ion-input>
       </ion-item>
       <ion-item>
@@ -18,16 +20,17 @@
         label="Contraseña" 
         labelPlacement="floating" 
         type="password" 
-        placeholder="Introduce tu Contraseña">
+        placeholder="Introduce tu Contraseña"
+        formControlName="contraseña">
         </ion-input>
       </ion-item>
-
-
-    </ion-list>
+  
+      <ion-button size="small"  (click)="login()">Ingresar</ion-button>
     
-    <div class="boton">
-      <ion-button size="small" routerLink="/qr">Ingresar</ion-button>
-    </div>
+
+    </form>
+    
+    
     <div class="action-button ion-padding">
       <ion-button size="small" class="registrar" slot="end" routerLink="/registrar">Registrar</ion-button>
       <ion-button size="small" class="olvidar" routerLink="/recuperar">Recuperar Contraseña</ion-button>
