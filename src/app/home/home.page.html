@@ -30,15 +30,10 @@
       </ion-item>
   
       <ion-button size="small"  (click)="login()">Ingresar</ion-button>
-    
-
+      <ion-button size="small" class="registrar" slot="end" routerLink="/registrar">Registrar</ion-button>
+      <p>¿Haz olvidado tu contraseña? <a (click)="resetPass()">Haz click aqui!</a></p>
     </form>
     
-    
-    <div class="action-button ion-padding">
-      <ion-button size="small" class="registrar" slot="end" routerLink="/registrar">Registrar</ion-button>
-      <ion-button size="small" class="olvidar" routerLink="/recuperar">Recuperar Contraseña</ion-button>
-    </div>
   </div>
   
 

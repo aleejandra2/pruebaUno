@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { Usuario } from '../registrar/registrar.page';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -12,7 +13,10 @@ export class HomePage {
   formLogin!: FormGroup;
   usuarios: Usuario[] = [];
 
-  constructor(public formBuilder: FormBuilder,private alertController: AlertController) {
+  constructor(
+    public formBuilder: FormBuilder,
+    private alertController: AlertController,
+    private router: Router) {
 
     this.formLogin = this.formBuilder.group({
       'correo': new FormControl("",Validators.required),
@@ -48,6 +52,11 @@ export class HomePage {
     });
     await alert.present();
   }
+}
+
+resetPass() {
+  // Agrega la lógica para restablecer la contraseña si es necesario
+  this.router.navigate(['/recuperar']);
 }
 
 }
