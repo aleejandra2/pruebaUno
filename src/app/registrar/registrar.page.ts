@@ -109,8 +109,6 @@ export class RegistrarPage implements OnInit {
 
     const escuelaSeleccionada = this.formRegistro.get('escuela')?.value;
 
-    // Esta función se ejecuta cuando cambia la selección de escuela
-    // Aquí puedes definir las opciones de carrera según la elección de la escuela
     if (escuelaSeleccionada === 'Administracion y Negocio') {
       this.opcionesCarrera = [
         'Administracion de Empresas',

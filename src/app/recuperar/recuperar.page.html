@@ -1,11 +1,11 @@
 <ion-toolbar>
-  <ion-title>Recuperar</ion-title>
   <ion-buttons slot="end" routerLink="/home">
     <ion-button> Back </ion-button>
   </ion-buttons>
 </ion-toolbar>
 
 <ion-content [fullscreen]="true">
+  <ion-title>Recuperar</ion-title>
   <form [formGroup]="formRecuperar">
     <ion-item class="prueba">
       <ion-input 
@@ -18,32 +18,8 @@
         required>
       </ion-input>
     </ion-item>
-    <!-- <ion-item>
-      <ion-input 
-      label="Nueva Contraseña:" 
-      labelPlacement="floating" 
-      type="password" 
-      placeholder="Introduce tu Contraseña"
-      formControlName="nuevaContrasenia"
-      errorText="Debe ingresar una nueva contraseña"
-      required>
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input 
-      label="Confirmar Nueva Contraseña:" 
-      labelPlacement="floating" 
-      type="password" 
-      placeholder="Introduce tu Contraseña"
-      formControlName="confirmarNuevaContrasenia"
-      errorText="Debe volver a ingresar la nueva contraseña"
-      required>
-      </ion-input>
-    </ion-item> -->
-
-    <ion-button size="small" (click)="mostrarContrasenia()">Ingresar</ion-button>
-
   
+    <ion-button size="small" (click)="mostrarContrasenia()">Ingresar</ion-button>
 
   </form>
 </ion-content>

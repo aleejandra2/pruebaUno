@@ -1,5 +1,4 @@
 <ion-toolbar>
-  <ion-title>Registro</ion-title>
   <ion-buttons slot="end" routerLink="/home">
     <ion-button> Back</ion-button>
   </ion-buttons>
@@ -19,6 +18,8 @@
         placeholder="Introduce tu nombre"
         formControlName="nombre"
         errorText="Debe ingresar su nombre"
+        maxlength="12"
+        minlength="3"
         required>
         </ion-input>
       </ion-item>
@@ -30,6 +31,8 @@
         placeholder="Introduce tu apellido"
         formControlName="apellido"
         errorText="Debe ingresar su apellido"
+        maxlength="12"
+        minlength="3"
         required>
         </ion-input>
       </ion-item>
@@ -38,25 +41,14 @@
         label="Rut:" 
         labelPlacement="floating" 
         [clearInput]="true" 
-        placeholder="Introduce tu rut (ej: 12.123.123-0)"
+        placeholder="Introduce tu rut (sin punto ni guíon)"
         formControlName="rut"
         errorText="Debe ingresar su rut"
+        maxlength="9"
+        minlength="8"
         required>
         </ion-input>
       </ion-item>
-      <!-- <ion-item>
-        <ion-input 
-        label="Carrera:" 
-        labelPlacement="floating" 
-        [clearInput]="true" 
-        placeholder="Introduce tu carrera"
-        formControlName="carrera"
-        errorText="Debe ingresar una carrera"
-        required>
-        </ion-input>
-      </ion-item> -->
-
-      <!-- Carrera -->
      
         <ion-item>
           <ion-label position="stacked">Escuela</ion-label>
@@ -75,26 +67,7 @@
             <ion-select-option *ngFor="let option of opcionesCarrera" [value]="option">{{ option }}</ion-select-option>
           </ion-select>
         </ion-item>
-     
-      
-      <!-- <ion-item>
-        <ion-input 
-        label="Correo:" 
-        labelPlacement="floating" 
-        [clearInput]="true" 
-        placeholder="Introduce tu correo"
-        formControlName="correo"
-        type="email"
-        errorText="Debe ingresar su correo"
-        required>
-        </ion-input>
-      </ion-item>
-      <div *ngIf="formRegistro.get('correo')?.hasError('required')" class="error-message">
-        El correo es obligatorio.
-      </div>
-      <div *ngIf="formRegistro.get('correo')?.hasError('email')" class="error-message">
-        El correo no es válido.
-      </div> -->
+
       <ion-item>
         <ion-input 
         label="Contraseña:" 
@@ -103,10 +76,13 @@
         placeholder="Introduce tu Contraseña"
         formControlName="contraseña"
         errorText="Debe ingresar una contraseña"
+        maxlength="12"
+        minlength="5"
         required>
         </ion-input>
       </ion-item>
     </form>
+
     <div class="action-button ion-padding">
       <ion-button size="small" class="registrar" slot="end" [routerLink]="['/home']" routerLinkActive="router-link-active"  (click)="registrar()">Registrar</ion-button>
     </div>

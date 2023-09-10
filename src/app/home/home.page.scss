@@ -13,7 +13,7 @@ ion-content{
     text-align: center;
       h1{
           font-size: 1.9rem;
-          font-family: cursive;
+          font-family:'Times New Roman';
           font-weight: bolder;
       }
   }
@@ -22,17 +22,4 @@ ion-content{
     color: #141414;
     font-weight: bold;
   }
-}
-
-.action-button{
-  text-align: center;
-  .registrar-button{
-      color: #141414;
-      font-weight: bold;
-  }
-  .olvidar-button{
-      color: #141414;
-      font-weight: bold;
-  }
-
 }
