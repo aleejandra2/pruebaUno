@@ -1,4 +1,4 @@
-<ion-toolbar>
+<ion-toolbar >
   <ion-buttons slot="end" routerLink="/home">
     <ion-button> Back</ion-button>
   </ion-buttons>
@@ -9,7 +9,7 @@
     <div class="heading ion-padding" >
       <h1>Registrar</h1>
     </div>
-    <form [formGroup]="formRegistro" (keyup.enter)="registrar()">
+    <form [formGroup]="formRegistro" #form (keyup.enter)="registrar()">
       <ion-item>
         <ion-input 
         label="Nombre:" 
@@ -17,7 +17,7 @@
         [clearInput]="true" 
         placeholder="Introduce tu nombre"
         formControlName="nombre"
-        errorText="Debe ingresar su nombre"
+        errorText="Debe ingresar su nombre entre 3 y 12 caracteres"
         maxlength="12"
         minlength="3"
         required>
@@ -30,7 +30,7 @@
         [clearInput]="true" 
         placeholder="Introduce tu apellido"
         formControlName="apellido"
-        errorText="Debe ingresar su apellido"
+        errorText="Debe ingresar su apellido entre 3 y 12 caracteres"
         maxlength="12"
         minlength="3"
         required>
@@ -41,7 +41,7 @@
         label="Rut:" 
         labelPlacement="floating" 
         [clearInput]="true" 
-        placeholder="Introduce tu rut (sin punto ni guíon)"
+        placeholder="Introduce tu rut (sin puntos ni guíon)"
         formControlName="rut"
         errorText="Debe ingresar su rut"
         maxlength="9"
@@ -75,7 +75,7 @@
         type="password" 
         placeholder="Introduce tu Contraseña"
         formControlName="contraseña"
-        errorText="Debe ingresar una contraseña"
+        errorText="Debe ingresar una contraseña entre 5 y 12 de longitud"
         maxlength="12"
         minlength="5"
         required>

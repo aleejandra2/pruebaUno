@@ -1,12 +1,13 @@
 <ion-toolbar>
   <ion-buttons slot="end" routerLink="/home">
-    <ion-button> Cerrar sesion </ion-button>
+    <ion-button (click)="cerrarSesion()"> Cerrar sesion </ion-button>
   </ion-buttons>
 </ion-toolbar>
 
 
 
 <ion-content [fullscreen]="true" >
+  <br>
   <ion-title>Clase Registrada</ion-title>
   <ion-card>
     <ion-card-header>

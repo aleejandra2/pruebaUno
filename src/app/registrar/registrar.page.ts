@@ -86,7 +86,7 @@ export class RegistrarPage implements OnInit {
     localStorage.setItem('usuarios', JSON.stringify(this.usuarios));
     
     const nombreUsuario = nuevoUsuario.usuario;
-
+    this.formRegistro.reset();
     const alert = await this.alertController.create({
       header: '¡Registro exitoso!',
       subHeader: 'Tu nombre de usuario es:',

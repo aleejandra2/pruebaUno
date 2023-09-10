@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { Usuario } from '../registrar/registrar.page';
 
 @Component({
   selector: 'app-qr',
@@ -13,11 +13,29 @@ export class QRPage implements OnInit {
   public myDevice!: MediaDeviceInfo;
   public scannerEnabled=false;
   public results:string[]=[];
+  datoUsuario: Usuario = {
+    nombre: '',
+    apellido: '',
+    rut: '',
+    escuela: '',
+    carrera: '',
+    // correo: '',
+    contraseña: '',
+    usuario: ''
+  };
+  usuarios: Usuario[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
+    const usuarioActualString = localStorage.getItem('usuarioActual');
+
+  if (usuarioActualString) {
+    this.datoUsuario = JSON.parse(usuarioActualString);
   }
+    
+  }
+  
 
   camerasFoundHandler(cameras: MediaDeviceInfo[]){
     this.cameras=cameras;
@@ -45,6 +63,13 @@ export class QRPage implements OnInit {
       console.log(result);
       this.router.navigate(['/clase-registrada'], { queryParams: { resultado: result } });
       
-    }}
+  }}
+
+  
+
+  cerrarSesion() {
+    localStorage.removeItem('usuarioActual');
+    this.router.navigate(['/home']);
+  }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor(private platform: Platform) {
+
+    if (this.platform.is('android') || this.platform.is('ios')) {
+    } else {
+      localStorage.clear();
+    }
+  }
 
   ngOnInit() {
     
@@ -16,4 +23,5 @@ export class AppComponent implements OnInit {
   reiniciarLocalStorage() {
     localStorage.clear();
   }
+  
 }

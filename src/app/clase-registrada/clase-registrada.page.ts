@@ -45,7 +45,7 @@ export class ClaseRegistradaPage implements OnInit {
     const resultadoDividido: { [key: string]: string } = {};
 
     partes.forEach(parte => {
-      const [nombre, valor] = parte.split(':');
+      const [nombre, valor] = parte.split(': ');
       if (nombre && valor) {
         resultadoDividido[nombre.trim()] = valor.trim();
       }
