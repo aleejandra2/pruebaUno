@@ -72,7 +72,6 @@
         <ion-item *ngIf="formRegistro.get('escuela')">
           <ion-label position="stacked">Carrera</ion-label>
           <ion-select formControlName="carrera">
-            <!-- Opciones de carrera mostradas dinámicamente según la elección de la escuela -->
             <ion-select-option *ngFor="let option of opcionesCarrera" [value]="option">{{ option }}</ion-select-option>
           </ion-select>
         </ion-item>

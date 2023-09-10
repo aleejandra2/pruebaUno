@@ -1,3 +1,12 @@
 ion-content{
     --background: url('../../assets/images/back1.jpeg') no-repeat center/cover fixed;
+    
+    ion-button{
+        --background: #dd9492;
+        color: #141414;
+        font-weight: bold;
+        
+    }
 }
+
+
