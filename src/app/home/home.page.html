@@ -7,14 +7,13 @@
     <form [formGroup]="formLogin">
       <ion-item>
         <ion-input 
-        type="email"
-        label="Correo:" 
-        labelPlacement="floating" 
-        [clearInput]="true" 
-        placeholder="Ingrese su correo"
-        formControlName="correo"
-        errorText="Debe ingresar su correo"
-        required>
+          label="Usuario:"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su nombre de usuario"
+          formControlName="usuario"
+          errorText="Debe ingresar su nombre de usuario"
+          required>
         </ion-input>
       </ion-item>
       <ion-item>
@@ -29,7 +28,7 @@
         </ion-input>
       </ion-item>
   
-      <ion-button size="small"  (click)="login()">Ingresar</ion-button>
+      <ion-button size="small" (click)="login()">Ingresar</ion-button>
       <ion-button size="small" class="registrar" slot="end" routerLink="/registrar">Registrar</ion-button>
       <p>¿Haz olvidado tu contraseña? <a (click)="resetPass()">Haz click aqui!</a></p>
     </form>

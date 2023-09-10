@@ -7,5 +7,16 @@
 
 
 <ion-content [fullscreen]="true">
-  
+  <select #selectList (change)="selectCamera(selectList.value)">
+    <option *ngFor="let camera of cameras" value={{camera.label}}>
+      {{ camera.label }}
+    </option>
+  </select>
+
+  <zxing-scanner style="width: 500px;"
+  [enable]="scannerEnabled"
+  [device]="myDevice"
+  (camerasFound)="camerasFoundHandler($event)"
+  (scanSuccess)="scanSuccessHandler($event)"
+></zxing-scanner>
 </ion-content>

@@ -57,21 +57,28 @@
       </ion-item> -->
 
       <!-- Carrera -->
-      <!-- <ion-list>
+     
         <ion-item>
           <ion-label position="stacked">Escuela</ion-label>
-          <ion-select [(ngModel)]="escuela" (ionChange)="onEscuelaChange()">
+          <ion-select formControlName="escuela" (ionChange)="onEscuelaChange()">
             <ion-select-option value="Administracion y Negocio"> Administracion y Negocio </ion-select-option>
             <ion-select-option value="Comunicacion"> Comunicacion </ion-select-option>
-            <ion-select-option value="Gatronomia"> Gatronomia </ion-select-option>
+            <ion-select-option value="Gastronomia"> Gastronomia </ion-select-option>
             <ion-select-option value="Informatica y Telecomunicaciones"> Informatica y Telecomunicaciones </ion-select-option>
             <ion-select-option value="Salud"> Salud </ion-select-option>
             <ion-select-option value="Turismo y Hoteleria"> Turismo y Hoteleria </ion-select-option>
           </ion-select>
         </ion-item>
-      </ion-list> -->
-
-      <ion-item>
+        <ion-item *ngIf="formRegistro.get('escuela')">
+          <ion-label position="stacked">Carrera</ion-label>
+          <ion-select formControlName="carrera">
+            <!-- Opciones de carrera mostradas dinámicamente según la elección de la escuela -->
+            <ion-select-option *ngFor="let option of opcionesCarrera" [value]="option">{{ option }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+     
+      
+      <!-- <ion-item>
         <ion-input 
         label="Correo:" 
         labelPlacement="floating" 
@@ -88,7 +95,7 @@
       </div>
       <div *ngIf="formRegistro.get('correo')?.hasError('email')" class="error-message">
         El correo no es válido.
-      </div>
+      </div> -->
       <ion-item>
         <ion-input 
         label="Contraseña:" 

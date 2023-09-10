@@ -19,11 +19,13 @@ export class HomePage {
     private router: Router) {
 
     this.formLogin = this.formBuilder.group({
-      'correo': new FormControl("",Validators.required),
+      'usuario': new FormControl("",Validators.required),
       'contraseña': new FormControl("",Validators.required)
     })
   }
-
+  ionViewDidLeave() {
+    this.formLogin.reset();
+  }
   async login(){
     var form = this.formLogin.value;
     
@@ -32,10 +34,12 @@ export class HomePage {
   if (usuarioString) {
     this.usuarios = JSON.parse(usuarioString);
 
-    const usuarioEncontrado = this.usuarios.find(usuario => usuario.correo === form.correo && usuario.contraseña === form.contraseña);
+    const usuarioEncontrado = this.usuarios.find(usuario => usuario.usuario === form.usuario && usuario.contraseña === form.contraseña);
 
     if (usuarioEncontrado) {
       console.log('ingresar')
+      localStorage.setItem('usuarioActual', JSON.stringify(usuarioEncontrado));
+      this.router.navigate(['/qr']);
     }else{
       const alert = await this.alertController.create({
         header: 'Datos Incorrectos',
@@ -55,7 +59,6 @@ export class HomePage {
 }
 
 resetPass() {
-  // Agrega la lógica para restablecer la contraseña si es necesario
   this.router.navigate(['/recuperar']);
 }
 
