@@ -20,3 +20,16 @@ ion-title{
     font-size: 1.6rem;
 }
 
+.title-animation {
+    animation: colorChange 6s infinite alternate;
+  }
+  
+  @keyframes colorChange {
+    0% {
+      color: #dd9492;
+    }
+    100% {
+        color: #6b201d;
+      }
+  }
+  
